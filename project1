@@ -1,0 +1,73 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+
+int m(int coins);
+int sh(int coins);
+int br(int coins);
+
+int main(){
+    int coins = 100;
+    string item;
+
+    cout << "Добро пожаловать в магазин!"<< endl;
+    cout << "У вас есть " << coins << "монет!" << endl;
+    cout << "Выберите то что вы хотите купить - меч, щит, броня" << endl;
+    cout << "Выберите товар!" << endl;
+    cin >> item;
+
+    if(item == "Меч"){
+        coins =  m(coins);
+    }
+
+    else if(item == "Щит"){
+        coins =  sh(coins);
+    }
+
+    else if(item == "Броня"){
+        coins =  br(coins);
+    }
+    else{
+        cout << "Такого товара нет!" << endl;
+    }
+
+    cout << "У вас осталось >> " << coins << " монет" << endl;
+
+
+}
+
+int m(int coins){
+    if (coins >= 50){
+        coins -= 50;
+        cout << "Поздравляем вы купили меч!"  << endl;
+    }
+    else {
+        cout << "Недостаточно средств!" << endl;
+    }
+    return coins;
+}
+
+int sh(int coins){
+    if(coins >= 30){
+        coins -= 30;
+        cout << "Поздравляем вы купили Щит!" << endl;
+    }
+    else{
+        cout << "Недостаточно средств!" << endl;
+    }
+    
+    return coins;
+}
+
+int br(int coins){
+    if(coins >= 20){
+        coins -= 20;
+        cout << "Поздравляем вы купили Броню!" << endl;
+    }
+    else{
+        cout << "Недостаточно средств!" << endl;
+    }
+    return coins;
+}
